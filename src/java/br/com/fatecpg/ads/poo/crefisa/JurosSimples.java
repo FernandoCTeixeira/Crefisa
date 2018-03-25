@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author AC.CF
  */
-@WebServlet(name = "JurosSimples", urlPatterns = {"/JurosSimples"})
+@WebServlet(name = "JurosSimples", urlPatterns = {"/juros-simples"})
 public class JurosSimples extends HttpServlet {
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
