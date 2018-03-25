@@ -41,6 +41,7 @@ public class JurosComposto extends HttpServlet {
             out.println("<title>Juros Composto</title>");            
             out.println("</head>");
             out.println("<body>");
+            out.println("<a href='/Crefisa/'>Home/</a>Juros Composto");
             DecimalFormat df = new DecimalFormat("###,##0.00");
             out.println("<center><form><table style='text-align:right;'>"
                     + "<tr><td>Taxa de Juros:</td><td> <input type'text' name='j'/></td></tr>"

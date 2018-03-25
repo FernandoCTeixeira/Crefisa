@@ -15,10 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author AC.CF
+ * @author Plops013
  */
-@WebServlet(name = "JurosSimples", urlPatterns = {"/juros-simples"})
-public class JurosSimples extends HttpServlet {
+@WebServlet(name = "HomePage", urlPatterns = {"/home.html"})
+public class HomePage extends HttpServlet {
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -36,34 +37,22 @@ public class JurosSimples extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Juros Simples</title>");            
+            out.println("<title>WebCalc"
+                    + "</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<a href='/Crefisa/'>Home/</a>Juros Simples");
-            out.println("<h1>Cálculo de Juros Simples</h1>");
-            out.println("<form>");
-            out.println("Valor Inicial: <input type'text' name='v'/>");
-            out.println("Porcentagem: <input type'text' name='p'/>");
-            out.println("Periodo: <input type'text' name='t'/>");
-            out.println("<input type='submit' value='Calcular'/>");
-            out.println("</form>");
-            out.println("<hr>");
-            double v=0,p=0,t=0;
-            try
-            {
-                t = Double.parseDouble(request.getParameter("t"));
-                v = Double.parseDouble(request.getParameter("v"));
-                p = Double.parseDouble(request.getParameter("p"));
-            }
-            catch(Exception ex){ /*out.println("Erro ao usar o parametro<hr>");*/ }
-            out.println("<table border='1'>");
-            out.println("<tr><th>Valor Inicial</th><th>Juros</th><th>Montante</th>");
-
-                double j = (p/100)*t*v;
-                double montante = j+v;
-                out.println("<tr><td>"+v+"</td><td>" + j +"</td><td>" + montante +"</td>");          
-            out.println("</tr>");
-            out.println("</table>");
+            out.println("<div align='center'><img src='img/crefisa-logo.png'/></div>"
+                        +"<div align='center'>"
+                        +"<h2 align='center'>Funções</h2>"
+                        +"<a href='/Crefisa/juros-simples'>Juros Simples</a>   "
+                        +"<a href='/Crefisa/juros-composto'>Juros Composto</a>"
+                        +"</div>"
+                        +"<h2 align='center'>Equipe</h2>"
+                        +"<table border='1'align='center'>"
+                        +"<tr><td></td><th>Fernando</th> <th>Fabio</th> <th>Nilson</th> <th>Paulo</th></tr>"
+                        +"<tr><th>Contribuição</th><td>Juros Simples</td> <td>Home Page</td> <td>Pagina De Estilos</td> <td>Juros Composto</td> "
+                        +"</table>"
+                        );
             out.println("</body>");
             out.println("</html>");
         }
