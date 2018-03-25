@@ -50,8 +50,8 @@ public class JurosComposto extends HttpServlet {
                     + "</form></table></center><hr>");
             out.println("<center><table width='100%' style='text-align:left;'>");
             out.println("<tr>"
-                    + "<th>Valor</th>"
-                    + "<th>Com juros</th>"
+                    + "<th>Valor do Juros</th>"
+                    + "<th>Valor total com juros</th>"
                     + "<th>Mês</th>"
                     + "</tr>");
             double j = 100, cj = 0;
@@ -71,7 +71,9 @@ public class JurosComposto extends HttpServlet {
             j = j/100;
             for(int i = 0; i < p; i++)
             {
+                v = cj;
                 cj = (j * cj) + cj;
+                v = cj - v;
                 out.println("<tr>"
                     + "<td>R$"+ df.format(v) +"</td>"
                     + "<td> R$" + df.format(cj) + "</td>"
