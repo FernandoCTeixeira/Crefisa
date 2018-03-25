@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "JurosSimples", urlPatterns = {"/JurosSimples"})
 public class JurosSimples extends HttpServlet {
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -37,10 +36,33 @@ public class JurosSimples extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet JurosSimples</title>");            
+            out.println("<title>Juros Simples</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet JurosSimples at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Cálculo de Juros Simples</h1>");
+            out.println("<form>");
+            out.println("Valor Inicial: <input type'text' name='v'/>");
+            out.println("Porcentagem: <input type'text' name='p'/>");
+            out.println("Periodo: <input type'text' name='t'/>");
+            out.println("<input type='submit' value='Calcular'/>");
+            out.println("</form>");
+            out.println("<hr>");
+            double v=0,p=0,t=0;
+            try
+            {
+                t = Double.parseDouble(request.getParameter("t"));
+                v = Double.parseDouble(request.getParameter("v"));
+                p = Double.parseDouble(request.getParameter("p"));
+            }
+            catch(Exception ex){ /*out.println("Erro ao usar o parametro<hr>");*/ }
+            out.println("<table border='1'>");
+            out.println("<tr><th>Valor Inicial</th><th>Juros</th><th>Montante</th>");
+
+                double j = (p/100)*t*v;
+                double montante = j+v;
+                out.println("<tr><td>"+v+"</td><td>" + j +"</td><td>" + montante +"</td>");          
+            out.println("</tr>");
+            out.println("</table>");
             out.println("</body>");
             out.println("</html>");
         }
