@@ -39,6 +39,7 @@ public class JurosSimples extends HttpServlet {
             out.println("<title>Juros Simples</title>");            
             out.println("</head>");
             out.println("<body>");
+            out.println("<style type=text/css>body{background-color:#FFDEAD}"+"</style>");
             out.println("<a href='/Crefisa/'>Home/</a>Juros Simples");
             out.println("<h1>Cálculo de Juros Simples</h1>");
             out.println("<form>");

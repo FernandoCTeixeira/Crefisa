@@ -38,9 +38,10 @@ public class HomePage extends HttpServlet {
             out.println("<html>");
             out.println("<head>");
             out.println("<title>WebCalc"
-                    + "</title>");            
+                    + "</title>");
             out.println("</head>");
             out.println("<body>");
+            out.println("<style type=text/css>body{background-color:#FFDEAD}"+"</style>");
             out.println("<div align='center'><img src='img/crefisa-logo.png'/></div>"
                         +"<div align='center'>"
                         +"<h2 align='center'>Funções</h2>"
