@@ -66,7 +66,7 @@ public class JurosSimples extends HttpServlet {
 
                 double j = (p/100)*t*v;
                 double montante = j+v;
-                out.println("<tr><td>R$ "+df.format(v) +"</td><td>R$ " +df.format(j) +"</td><td>R$ " + df.format(montante)+"</td>");          
+                out.println("<tr><td>R$ "+df.format(v) +"</td><td>R$ " +df.format(j) +"</td><td>R$ " + df.format(montante) +"</td>");          
             out.println("</tr>");
             out.println("</table>");
             out.println("</body>");

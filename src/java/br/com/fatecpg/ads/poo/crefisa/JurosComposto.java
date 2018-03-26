@@ -42,7 +42,9 @@ public class JurosComposto extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<style type=text/css>body{background-color:#FFDEAD}"+"</style>");
-            out.println("<a href='/Crefisa/'>Home/</a>Juros Composto");
+            out.println("<div align='center'><img src='img/crefisa-logo.png'/></div>"
+                        +"<div align='center'>");
+            out.println("<a href='/Crefisa/'>Home  / </a><a href='/Crefisa/juros-simples'>Juros Simples</a>   " );
             out.println("<h1>Cálculo de Juros Compostos</h1>");
             DecimalFormat df = new DecimalFormat("###,##0.00");
             out.println("<center><form><table style='text-align:right;'>"
