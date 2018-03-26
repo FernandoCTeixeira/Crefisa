@@ -7,6 +7,7 @@ package br.com.fatecpg.ads.poo.crefisa;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -40,8 +41,11 @@ public class JurosSimples extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<style type=text/css>body{background-color:#FFDEAD}"+"</style>");
-            out.println("<a href='/Crefisa/'>Home/</a>Juros Simples");
+            out.println("<div align='center'><img src='img/crefisa-logo.png'/></div>"
+                        +"<div align='center'>");
+            out.println("<a href='/Crefisa/'>Home / </a><a href='/Crefisa/juros-composto'> Juros Composto</a>");
             out.println("<h1>Cálculo de Juros Simples</h1>");
+             DecimalFormat df = new DecimalFormat("###,##0.00");
             out.println("<form>");
             out.println("Valor Inicial: <input type'text' name='v'/>");
             out.println("Porcentagem: <input type'text' name='p'/>");
@@ -62,7 +66,7 @@ public class JurosSimples extends HttpServlet {
 
                 double j = (p/100)*t*v;
                 double montante = j+v;
-                out.println("<tr><td>"+v+"</td><td>" + j +"</td><td>" + montante +"</td>");          
+                out.println("<tr><td>R$ "+df.format(v) +"</td><td>R$ " +df.format(j) +"</td><td>R$ " + df.format(montante)+"</td>");          
             out.println("</tr>");
             out.println("</table>");
             out.println("</body>");
